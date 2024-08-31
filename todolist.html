@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODOLIST</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            
+        }
+        .container{
+            width: 100%;
+        }
+        .input{
+            display: flex;
+            width: 100%;
+           
+            border-radius: 20px;
+            background-color: burlywood;
+            text-align: center;
+            justify-content: center;
+            height: 150px;
+            align-items: center;
+        }
+        .text{
+            
+            width: 100%;
+           
+            
+            margin-top: 10px;
+            border-radius: 20px;
+            background-color: yellowgreen;
+            text-align: center;
+            
+            
+            height: 550px;
+        }
+        .text p{
+            position: relative;
+            width: max-content;
+            height: 40px;
+            background-color: beige;
+            color: black;
+            text-align: left;
+            font-size: 19px;
+            padding: 7px;
+            margin-top: 12px;
+           
+          
+          
+           
+            border-radius: 2px;
+
+        }
+        .text button{
+
+        }
+        
+        #inpu{
+            height: 50px;
+            width: 70%;
+            background-color: whitesmoke;
+            color: black;
+            border-radius: 15px;
+            border-color: brown;
+            border-style: dotted;
+            
+            
+        }
+        #bro{
+            height: 50px;
+            width: 80px;
+            margin-left: 20px;
+            background-color:green;
+            color: white;
+            border-start-end-radius: 15px;
+            border-end-end-radius: 15px;
+        }
+        button{
+            height: 50px;
+            width: 80px;
+            margin-left: 20px;
+            background-color:red;
+            color: white;
+            border-start-end-radius: 15px;
+            border-end-end-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TODO LIST</h1>
+        <div class="input">
+            <input type="text" placeholder="Write the task " id="inpu">
+            <button id="bro" onclick="add()">ADD</button>
+        </div>
+        <div class="text">
+             
+        </div>
+    </div>
+    <!-- SPREAD/REST 
+     ...
+     -->
+   
+    <script>
+        let inpt=document.getElementById("inpu");
+        let task=document.querySelector(".text");
+        function add(){
+            if(inpt.value == ""){
+                alert("Please enter the task ")
+            }
+            else{
+                let para=document.createElement("p");
+                let del=document.createElement("button")
+                let edit=document.createElement("button")
+                edit.className="edi";
+                edit.addEventListener('click',function(){
+                    var add= prompt("enter the editable text ")
+                    para.textContent=add
+                
+                
+                      
+                })
+               
+                del.addEventListener('click',function(){
+                    task.removeChild(para);
+                    task.removeChild(del);
+                    task.removeChild(edit );
+
+                });
+                para.innerHTML=inpt.value;
+                task.appendChild(para);
+                inpt.value="";
+                del.textContent="DEL";
+                task.appendChild(del);
+                // dell.textContent="Del";
+                // para.appendChild(dell);
+                
+
+                edit.textContent="Edit"
+                task.appendChild(edit);
+                edit.style.marginTop="18px"
+                del.style.marginTop="18px"
+                para.style.marginLeft="20px"
+                para.style.marginTop="30px"
+
+                edit.style.backgroundColor="green"
+                
+
+            }
+        }
+        //hoisting
+        //event bubbling 
+        //captureing
+        //bubbling
+        //stop propogation 
+        // prevent  default
+        // also try it 
+        
+    </script>
+</body>
+</html>

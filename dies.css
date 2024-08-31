@@ -1,0 +1,153 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    
+}
+body{
+  font-family: "Press Start 2P", system-ui;
+    background-image:url(img/Designer\ \(2\).png);
+    background-size: cover;
+    color: #ffff;
+
+
+
+
+
+
+
+
+   
+}
+.big{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-end-end-radius: 130px;
+    border-top-right-radius: 200px;
+    border-top-left-radius: 150px;
+    margin-top: 50px;
+    width: 850px;
+    margin-left: 650px;
+
+    
+    backdrop-filter: blur(20px);
+    
+    /* background-image: linear-gradient(to right, #f388b1, #d23845,rgb(162, 12, 12)); */
+
+    
+}
+audio{
+ display: none;
+}
+#heading{
+  color: REd;
+}
+#start{
+  background: linear-gradient(to right, #f32170, 
+  #ff6b08, #cf23cf, #eedd44);
+ -webkit-text-fill-color: transparent; 
+ -webkit-background-clip: text;
+ font-size: 96px;
+ text-decoration: dotted;
+ font-weight: bolder;
+ align-items: center;
+ justify-content: center;
+ text-align: center;
+}
+.box1 h1{
+    color:white;
+    font-weight: 900;
+    font-style: italic;
+   
+    margin-bottom: 50px;
+}
+.box2{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 90px;
+}
+h1{
+    color: white;
+    font-size: 56px;
+}
+.player1{
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+}
+.player2{
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+
+}
+
+
+.button-19 {
+  appearance: button;
+  background-color: #c3e3f2ea;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #ef4d4d;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Press Start 2P", system-ui;
+  
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 50%;
+  margin-top: 60px;
+}
+
+.button-19:after {
+  background-clip: padding-box;
+  background-color: #1CB0F6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-19:main,
+.button-19:focus {
+  user-select: auto;
+}
+
+.button-19:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button-19:disabled {
+  cursor: auto;
+}
+
+.button-19:active {
+  border-width: 4px 0 0;
+  background: none;
+}

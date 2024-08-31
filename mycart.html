@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        .cart-item { margin-bottom: 10px; }
+        .cart-summary { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+    <div id="products">
+        <div class="cart-item">
+            <span>Product 1: $10</span>
+            <button onclick="addToCart(10)">Add to Cart</button>
+        </div>
+        <div class="cart-item">
+            <span>Product 2: $15</span>
+            <button onclick="addToCart(15)">Add to Cart</button>
+        </div>
+        <div class="cart-item">
+            <span>Product 3: $20</span>
+            <button onclick="addToCart(20)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="cart-summary">
+        <h2>Cart Summary</h2>
+        <p>Total Quantity: <span id="total-quantity">0</span></p>
+        <p>Total Amount: $<span id="total-amount">0</span></p>
+    </div>
+
+    <script >
+        let totalQuantity = 0;
+let totalAmount = 0;
+
+function addToCart(price) {
+    totalQuantity++;
+    totalAmount += price;
+    document.getElementById('total-quantity').innerText = totalQuantity;
+    document.getElementById('total-amount').innerText = totalAmount.toFixed(2);
+}
+
+    </script>
+</body>
+</html>

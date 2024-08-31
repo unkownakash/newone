@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and time changer </title>
+    <link rel="stylesheet" href="time.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="clock">
+            <div id="Date">Tuesday 16 July 2024</div>
+            <ul>
+                <li id="hours">05</li>
+                <li id="point">:</li>
+                <li id="min">25</li>
+                <li id="point">:</li>
+                <li id="sec">30</li>
+                <li id="am">AM</li>
+                
+            </ul>
+        </div>
+    </div>
+    <script>
+        function clock(){
+            var monthNames=["January","Februray","march","apirl","May","june","July",
+                "Auguust","SEP","Nov","DEc"
+            ];
+            var dayNames=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturaday"];
+            var today=new Date();
+            document.getElementById('Date').innerHTML=(dayNames[today.getDay()]+" "+
+        today.getDate()+" "+monthNames[today.getMonth()]+" "+today.getFullYear());
+
+        let h=today.getHours();
+        let m=today.getMinutes();
+        let s=today.getSeconds();
+        let day=h<12 ? 'AM':'PM';
+        h=h<10?'0'+h:h;
+        m=m<10?'0'+m:m;
+        s=s<10?'0'+s:s;
+
+        document.getElementById("hours").innerHTML=h;
+        document.getElementById("min").innerHTML=m;
+        document.getElementById("sec").innerHTML=s;
+        document.getElementById("am").innerHTML=day;
+
+        } var inter=setInterval(clock,400);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    
+    <h1>Cart</h1>
+   <div class="flex border border-grey-300 w-3/4 m-auto">
+    <div class="w-1/4">
+        <img src="https://images.pexels.com/photos/428338/pexels-photo-428338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+    </div>
+    <div class="w-1/4">
+        <p>Product Name</p>
+        
+    </div>
+    <div class="w-1/4">
+        <button class="bg-slate-700 px-3 py-2 text-white text-2xl inc" >+</button> 
+        <span class="text-2xl qty" id="Q1">1</span>
+        <button class="bg-slate-700 px-3 py-2 text-white text-2xl dec">-</button>
+    </div>
+    <div class="w-1/4">
+        <p>Price</p>
+        <p>Rs<span class="prd-price">500</span></p>
+    </div>
+    <div class="w-1/4">
+        <p>total price</p>
+        <p>Rs<span class="total-price">00</span></p>
+    </div>
+    <div class="w-1/4">
+        <button class="bg-red-700 text-white px-2 py-1 remove-btn">Remove</button>
+    </div>
+   </div>
+   <!-- second product -->
+   <div class="flex border border-grey-300 w-3/4 m-auto">
+    <div class="w-1/4">
+        <img src="https://images.pexels.com/photos/428338/pexels-photo-428338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+    </div>
+    <div class="w-1/4">
+        <p>tshirt</p>
+        
+    </div>
+    <div class="w-1/4">
+        <button class="bg-slate-700 px-3 py-2 text-white text-2xl inc">+</button> 
+        <span class="text-2xl qty" id="Q2">1</span>
+        <button class="bg-slate-700 px-3 py-2 text-white text-2xl dec">-</button>
+    </div>
+    <div class="w-1/4">
+        <p>Price</p>
+        <p>Rs<span class="prd-price">600</span></p>
+    </div>
+    <div class="w-1/4">
+        <p>total price</p>
+        <p>Rs<span class="total-price">00</span></p>
+    </div>
+    <div class="w-1/4">
+        <button class="bg-red-700 text-white px-2 py-1 remove-btn">Remove</button>
+    </div>
+   </div>
+
+   <div class="container text-center text-2xl">
+    <p> total amount :<Span class="t-amnt">0</Span> </p>
+    <p> total qty : <span class="t-qty">0</span></p>
+   </div>
+    <script src="./Cart.js"></script>
+</body>
+</html>

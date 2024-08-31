@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dies Roll on</title>
+    <link rel="stylesheet" href="dies.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- <a target="_blank" href="https://icons8.com/icon/o1dGziQOijg4/dice-one">Dice One</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
+</head>
+<body>
+    <h1 id="start" onclick="hello()">GAME START </h1>
+    <audio id="game">
+        <source src="img/game-countdown-62-199828.mp3" type="audio/mpeg">
+    </audio>
+    <div class="big">
+        <div class="box1">
+            <h1 id="heading">Lets Play</h1>
+        </div>
+        <div class="box2">
+            <div class="dies1">
+                <p class="player1" id="play1">Player1</p>
+                <img src="img/dice6.png" alt="" height="300px" class="img1">
+
+            </div>
+            <div class="dies2">
+                <p class="player2" id="play2">Player2</p>
+                <img src="img/dice2.png" alt="" height="300px" class="img2">
+                <audio id="myAudio">
+                    <source src="img/rolling-dice.mp3" type="audio/mpeg">
+                  </audio>
+            </div>
+        </div>
+        <div class="container bottom">
+            <button class="button-19" role="button" onclick="roleDices()">ROLE DICES</button>
+            
+        </div>
+        <div class="container bottom">
+            <button class="button-19" role="button" onclick="editNames()">EDIT NAMES</button>
+                
+            
+        </div>
+    </div>
+    <script>
+        var x = document.getElementById("myAudio");
+        var y=document.getElementById("game");
+        let Player1=""
+        let Player2=""
+     function editNames(){
+         Player1=prompt("Enter The First player Name"); 
+         Player2=prompt("Enter The Second player Name"); 
+
+          
+       
+        if (Player1.length < 1 || Player2.length < 1) {
+                alert('please enter valid name');
+                return;
+            }
+            document.getElementById("play1").innerHTML=Player1;
+            document.getElementById("play2").innerHTML=Player2;
+     }
+     function hello(){
+        y.play();
+     }
+     function roleDices(){
+        x.play(); 
+        let diceNum1 = document.querySelector(".img1");
+            let diceNum2 = document.querySelector(".img2");
+          
+            diceNum1.setAttribute("src", "img/diceroll.gif")
+            diceNum2.setAttribute("src", "img/diceroll.gif")
+            
+            // let result = document.querySelector('h1')
+            // result.innerHTML = ""
+            setTimeout(() => {
+                let num1=Math.floor(Math.random()*6)+1;
+                let num2=Math.floor(Math.random()*6)+1;
+                //
+                diceNum1.setAttribute("src","img/dice"+num1+".png")
+                diceNum2.setAttribute("src","img/dice"+num2+".png")
+                //
+                if(Player1&&Player2==""){
+                    if(num1<num2){
+                    
+                    document.getElementById("heading").innerHTML=("Player2"+" "+"WINS")
+                }
+                else if(num1>num2){
+                    document.getElementById("heading").innerHTML=("Player1"+" "+"WINS")
+                }
+                else{
+                    document.getElementById("heading").innerHTML=("DRAW & PLAY AGAIN")
+                }
+            }
+            else{
+                if(num1<num2){
+                    
+                    document.getElementById("heading").innerHTML=(Player2+" "+"WINS")
+                }
+                else if(num1>num2){
+                    document.getElementById("heading").innerHTML=(Player1+" "+"WINS")
+                }
+                else{
+                    document.getElementById("heading").innerHTML=("DRAW & PLAY AGAIN")
+                }
+            }
+               
+               
+                document.getElementById("start").innerHTML=("GAME ENDS")
+                // document.getElementsByTagName("audio").innerHTML.style.display=("block");
+
+            }, 2500);
+           
+     }
+    </script>
+    
+</body>
+</html>
